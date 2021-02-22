@@ -1,0 +1,113 @@
+/*
+*  保険商品情報格納TABLE
+*/
+CREATE TABLE IF NOT EXISTS benefit
+ (
+ benefitid NUMBER(11) NOT NULL,
+ benefitname VARCHAR2(100),
+ CONSTRAINT pk_benefit PRIMARY KEY( benefitid )
+ )
+;
+
+CREATE TABLE IF NOT EXISTS product
+ (
+ productcode VARCHAR2(100) NOT NULL,
+ productname VARCHAR2(100),
+ benefitid NUMBER(11) NOT NULL,
+ CONSTRAINT pk_product PRIMARY KEY( productcode ),
+ CONSTRAINT fk1_product FOREIGN KEY( benefitid ) REFERENCES benefit( benefitid )
+ );
+
+CREATE TABLE IF NOT EXISTS benefitchoise
+ (
+ benefitchoisecode VARCHAR2(100) NOT NULL,
+ benefitchoisename VARCHAR2(100),
+ CONSTRAINT pk_benefitchoise PRIMARY KEY( benefitchoisecode )
+ )
+;
+
+CREATE TABLE IF NOT EXISTS periodofinsurance
+ (
+ productinsurancecode VARCHAR2(100) NOT NULL,
+ productinsurancename VARCHAR2(100),
+ CONSTRAINT pk_periodofinsurance PRIMARY KEY( productinsurancecode )
+ )
+;
+
+CREATE TABLE IF NOT EXISTS optionlist
+ (
+ optioncode VARCHAR2(100) NOT NULL,
+ optionname VARCHAR2(100),
+ CONSTRAINT pk_option PRIMARY KEY( optioncode )
+ )
+;
+
+CREATE TABLE IF NOT EXISTS benefit_benefitchoise
+ (
+ id NUMBER(11) NOT NULL,
+ benefitid NUMBER(11) NOT NULL,
+ benefitchoisecode VARCHAR2(100) NOT NULL,
+ CONSTRAINT pk_benefit_benefitchoise PRIMARY KEY( id ),
+ CONSTRAINT fk1_benefit_benefitchoise FOREIGN KEY( benefitid ) REFERENCES benefit( benefitid ),
+ CONSTRAINT fk2_benefit_benefitchoise FOREIGN KEY( benefitchoisecode ) REFERENCES benefitchoise( benefitchoisecode )
+ )
+;
+
+CREATE TABLE IF NOT EXISTS product_periodofinsurance
+ (
+ id NUMBER(11) NOT NULL,
+ productcode VARCHAR2(100) NOT NULL,
+ productinsurancecode VARCHAR2(100) NOT NULL,
+ CONSTRAINT pk_product_periodofinsurance PRIMARY KEY( id ),
+ CONSTRAINT fk1_product_periodofinsurance FOREIGN KEY( productcode ) REFERENCES product( productcode ),
+ CONSTRAINT fk2_product_periodofinsurance FOREIGN KEY( productinsurancecode ) REFERENCES periodofinsurance( productinsurancecode )
+ )
+;
+
+CREATE TABLE IF NOT EXISTS product_optionlist
+ (
+ id NUMBER(11) NOT NULL,
+ productcode VARCHAR2(100) NOT NULL,
+ optioncode VARCHAR2(100) NOT NULL,
+ CONSTRAINT pk_product_option PRIMARY KEY( id ),
+ CONSTRAINT fk1_product_optionlist FOREIGN KEY( productcode ) REFERENCES product( productcode ),
+ CONSTRAINT fk2_product_optionlist FOREIGN KEY( optioncode ) REFERENCES optionlist( optioncode )
+ )
+;
+
+CREATE TABLE CUSTOMER (
+  CUSTOMER_ID INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  NAME VARCHAR(128) NOT NULL,
+  KANA VARCHAR(128) NOT NULL,
+  BIRTHDAY DATE NOT NULL,
+  SEX INTEGER NOT NULL,
+  ZIPCODE VARCHAR(128) NOT NULL,
+  ADDRESS VARCHAR(128) NOT NULL,
+  TEL_NO VARCHAR(128) NOT NULL,
+  MAIL VARCHAR(128)  NOT NULL
+);
+
+CREATE TABLE DOCUMENT_REQUEST (
+  RECEIPT_NO VARCHAR(128) NOT NULL PRIMARY KEY,
+  REQUESTED_DATE_TIME TIMESTAMP NOT NULL,
+  CUSTOMER_ID INTEGER NOT NULL,
+  FOREIGN KEY(CUSTOMER_ID) REFERENCES CUSTOMER(CUSTOMER_ID)
+);
+
+CREATE TABLE SIMULATION (
+  SIMULATION_ID INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  PRODUCT_CODE VARCHAR(128) NOT NULL,
+  BENEFIT_CODE VARCHAR(128) NOT NULL,
+  PERIOD_OF_INSULANCE_CODE VARCHAR(128) NOT NULL,
+  INSURANCE_PREMIUM INTEGER NOT NULL,
+  RECEIPT_NO VARCHAR(128) NOT NULL,
+  FOREIGN KEY(RECEIPT_NO) REFERENCES DOCUMENT_REQUEST(RECEIPT_NO)
+);
+
+CREATE TABLE SIMULATION_OPTION (
+  SIMULATION_OPTION_ID INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  OPTION_CODE VARCHAR(128) NOT NULL,
+  SIMULATION_ID INTEGER NOT NULL,
+  FOREIGN KEY(SIMULATION_ID) REFERENCES SIMULATION(SIMULATION_ID)
+);
+

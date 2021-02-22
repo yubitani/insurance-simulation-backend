@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.co.slcs.insurancepremiumsimulation.backend.spring.mybatis.InsuranceProductInfoMapper">
+    <!-- idに記載しているメソッド名のものがMapperクラスで実行された場合に流すクエリ -->
+    <select id="getInfos" resultMap="getInfosResultMap">
+        SELECT 
+            product.productcode AS productcode
+            ,product.productname AS productname
+            ,benefit.benefitname AS benefitname
+            ,benefitchoise.benefitchoisecode AS benefitchoicecode
+            ,benefitchoise.benefitchoisename AS benefitchoicename
+            ,periodofinsurance.productinsurancecode AS productinsurancecode
+            ,periodofinsurance.productinsurancename AS productinsurancename
+            ,optionlist.optioncode AS optioncode
+            ,optionlist.optionname AS optionname
+        FROM product 
+        LEFT JOIN benefit ON product.benefitid = benefit.benefitid 
+        LEFT JOIN benefit_benefitchoise ON benefit.benefitid = benefit_benefitchoise.benefitid 
+        LEFT JOIN benefitchoise ON benefit_benefitchoise.benefitchoisecode = benefitchoise.benefitchoisecode 
+        LEFT JOIN product_periodofinsurance ON product.productcode = product_periodofinsurance.productcode 
+        LEFT JOIN periodofinsurance ON product_periodofinsurance.productinsurancecode = periodofinsurance.productinsurancecode 
+        LEFT JOIN product_optionlist ON product.productcode = product_optionlist.productcode 
+        LEFT JOIN optionlist ON product_optionlist.optioncode = optionlist.optioncode
+    </select>
+    <select id="getBenefitBenefitChoice" resultMap="getBenefitBenefitChoiceMap">
+        SELECT
+            product.productcode AS productcode
+            ,product.productname AS productname
+            ,benefit.benefitname AS benefitname
+            ,benefitchoise.benefitchoisecode AS benefitchoicecode
+            ,benefitchoise.benefitchoisename AS benefitchoicename
+        FROM product
+        INNER JOIN (benefit_benefitchoise LEFT JOIN benefit ON benefit_benefitchoise.benefitid=benefit.benefitid LEFT JOIN benefitchoise ON benefit_benefitchoise.benefitchoisecode=benefitchoise.benefitchoisecode)
+        ON product.benefitid = benefit_benefitchoise.benefitid
+    </select>
+    <select id="getProductPeriodOfInsurance" resultMap="getProductPeriodOfInsuranceMap">
+        SELECT
+            product_periodofinsurance.productcode AS productcode
+            ,periodofinsurance.productinsurancecode AS productinsurancecode
+            ,periodofinsurance.productinsurancename AS productinsurancename
+        FROM product_periodofinsurance
+        LEFT JOIN periodofinsurance ON product_periodofinsurance.productinsurancecode = periodofinsurance.productinsurancecode
+        GROUP BY product_periodofinsurance.productcode, periodofinsurance.productinsurancecode, periodofinsurance.productinsurancename
+        ORDER BY product_periodofinsurance.productcode ASC
+    </select>
+    <select id="getProductOption" resultMap="getProductOptionMap">
+        SELECT 
+            product_optionlist.productcode AS productcode
+            ,optionlist.optioncode AS optioncode
+            ,optionlist.optionname AS optionname
+        FROM product_optionlist
+        LEFT JOIN optionlist ON optionlist.optioncode=product_optionlist.optioncode
+        ORDER BY product_optionlist.productcode ASC
+    </select>
+
+    <!-- ResulyMap (Entityクラスとクエリ結果の紐付け) -->
+    <resultMap id="getInfosResultMap" type="jp.co.slcs.insurancepremiumsimulation.backend.spring.mybatis.entity.InsuranceProductInfo">
+        <id property="productcode" column="productcode" />
+        <result property="productname" column="productname" />
+        <result property="benefitname" column="benefitname" />
+        <collection property="benefit" ofType="jp.co.slcs.insurancepremiumsimulation.backend.spring.mybatis.entity.BenefitChoice">
+            <id property="benefitchoicecode" column="benefitchoicecode" />
+            <result property="benefitchoicename" column="benefitchoicename" />
+        </collection>
+        <collection property="periodOfInsuranceList" ofType="jp.co.slcs.insurancepremiumsimulation.backend.spring.mybatis.entity.PeriodOfInsuranceChoice">
+            <id property="productinsurancecode" column="productinsurancecode" />
+            <result property="productinsurancename" column="productinsurancename" />
+        </collection>
+        <collection property="optionlist" ofType="jp.co.slcs.insurancepremiumsimulation.backend.spring.mybatis.entity.OptionChoice">
+            <id property="optioncode" column="optioncode" />
+            <result property="optionname" column="optionname" />
+        </collection>
+    </resultMap>
+    <resultMap id="getBenefitBenefitChoiceMap" type="jp.co.slcs.insurancepremiumsimulation.backend.spring.mybatis.entity.BenefitBenefitChoice">
+        <id property="productcode" column="productcode" />
+        <result property="productname" column="productname" />
+        <result property="benefitname" column="benefitname" />
+        <collection property="benefit" ofType="jp.co.slcs.insurancepremiumsimulation.backend.spring.mybatis.entity.BenefitChoice">
+            <id property="benefitchoicecode" column="benefitchoicecode" />
+            <result property="benefitchoicename" column="benefitchoicename" />
+        </collection>
+    </resultMap>
+    <resultMap id="getProductPeriodOfInsuranceMap" type="jp.co.slcs.insurancepremiumsimulation.backend.spring.mybatis.entity.ProductPeriodOfInsurance">
+        <id property="productcode" column="productcode" />
+        <collection property="periodOfInsuranceList" ofType="jp.co.slcs.insurancepremiumsimulation.backend.spring.mybatis.entity.PeriodOfInsuranceChoice">
+            <id property="productinsurancecode" column="productinsurancecode" />
+            <result property="productinsurancename" column="productinsurancename" />
+        </collection>
+    </resultMap>
+    <resultMap id="getProductOptionMap" type="jp.co.slcs.insurancepremiumsimulation.backend.spring.mybatis.entity.ProductOption">
+        <id property="productcode" column="productcode" />
+        <collection property="optionlist" ofType="jp.co.slcs.insurancepremiumsimulation.backend.spring.mybatis.entity.OptionChoice">
+            <id property="optioncode" column="optioncode" />
+            <result property="optionname" column="optionname" />
+        </collection>
+    </resultMap>
+</mapper>
