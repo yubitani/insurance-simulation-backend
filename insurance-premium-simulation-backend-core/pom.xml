@@ -5,12 +5,12 @@
 
 	<parent>
 		<groupId>jp.co.slcs</groupId>
-		<artifactId>insurance-premium-simulation-backend-parent</artifactId>
+		<artifactId>insurance-simulation-backend-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../insurance-premium-simulation-backend-parent/pom.xml</relativePath>
 	</parent>
 
-	<artifactId>insurance-premium-simulation-backend-core</artifactId>
+	<artifactId>insurance-simulation-backend-core</artifactId>
 
 	<dependencies>
 		<dependency>

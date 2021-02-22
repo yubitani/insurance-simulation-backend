@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmarks>
+   <site url="https://dist.springsource.org/release/GRECLIPSE/e4.11" selected="true" name="org.codehaus.groovy.eclipse.site"/>
+   <site url="http://eclipse.sonarlint.org/" selected="true" name="&quot;SonarLint for Eclipse Update Site&quot;"/>
+   <site url="http://www.ne.jp/asahi/zigen/home/plugin/dbviewer/" selected="true" name="${p2.metadata.repo.name}"/>
+   <site url="http://eclipse-cs.sourceforge.net/update/" selected="true" name="Eclipse Checkstyle Plugin"/>
+   <site url="https://editorconfig-eclipse.github.io/repository" selected="true" name="editorconfig-eclipse-p2"/>
+   <site url="https://spotbugs.github.io/eclipse/" selected="true" name="spotbugs"/>
+</bookmarks>
