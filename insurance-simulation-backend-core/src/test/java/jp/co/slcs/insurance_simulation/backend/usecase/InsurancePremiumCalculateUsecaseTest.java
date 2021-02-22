@@ -14,7 +14,7 @@ class InsurancePremiumCalculateUsecaseTest {
 	void 死亡保険の保険料計算が想定通り計算できる() {
 		InsurancePremiumCalculateUsecase usecase = new InsurancePremiumCalculateUsecase();
 
-		LocalDate inputBirthday = LocalDate.of(2000, 2, 15);
+		LocalDate inputBirthday = LocalDate.now().minusYears(20).minusMonths(1);
 		String inputSex = "1";
 		String productCode = "DeathInsurance-001";
 		String benefitCode = "5million";
@@ -32,7 +32,7 @@ class InsurancePremiumCalculateUsecaseTest {
 	void 医療保険の保険料計算が想定通り計算できる() {
 		InsurancePremiumCalculateUsecase usecase = new InsurancePremiumCalculateUsecase();
 
-		LocalDate inputBirthday = LocalDate.of(2000, 2, 15);
+		LocalDate inputBirthday = LocalDate.now().minusYears(20).minusMonths(1);
 		String inputSex = "1";
 		String productCode = "MedicalInsurance-001";
 		String benefitCode = "5000perday";
@@ -50,7 +50,7 @@ class InsurancePremiumCalculateUsecaseTest {
 	void がん保険の保険料計算が想定通り計算できる() {
 		InsurancePremiumCalculateUsecase usecase = new InsurancePremiumCalculateUsecase();
 
-		LocalDate inputBirthday = LocalDate.of(2000, 2, 15);
+		LocalDate inputBirthday = LocalDate.now().minusYears(20).minusMonths(1);
 		String inputSex = "1";
 		String productCode = "CancerInsurance-001";
 		String benefitCode = "5000perday";
