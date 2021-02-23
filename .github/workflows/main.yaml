@@ -33,7 +33,7 @@ jobs:
       
     - name: Pull JDK image from container-registry.oracle.com
       run: |
-        docker login --username ${{ secrets.ORACLE_SSO_USERNAME }} --password ${{ ORACLE_SSO_PASSWORD }} container-registry.oracle.com
+        docker login --username ${{ secrets.ORACLE_SSO_USERNAME }} --password ${{ secrets.ORACLE_SSO_PASSWORD }} container-registry.oracle.com
         docker pull container-registry.oracle.com/java/jdk:11.0.8
         docker logout container-registry.oracle.com
       
