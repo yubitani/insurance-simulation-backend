@@ -14,7 +14,7 @@ on:
 
 env:
   AWS_REGION: us-east-1
-  ECR_REPOSITORY: insurance-simulation/backend
+  ECR_REPOSITORY: public.ecr.aws/x5f4q3q7/insurance-simulation/backend
 
 jobs:
   build-and-push:
