@@ -27,8 +27,15 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11.0.8
+        
     - name: Build with Maven
       run: ./mvnw clean package -f insurance-simulation-backend-parent/pom.xml
+      
+    - name: Pull JDK image from container-registry.oracle.com
+      run: |
+        docker login --username ${{ secrets.ORACLE_SSO_USERNAME }} --password ${{ ORACLE_SSO_PASSWORD }} container-registry.oracle.com
+        docker pull container-registry.oracle.com/java/jdk:11.0.8
+        docker logout container-registry.oracle.com
       
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
