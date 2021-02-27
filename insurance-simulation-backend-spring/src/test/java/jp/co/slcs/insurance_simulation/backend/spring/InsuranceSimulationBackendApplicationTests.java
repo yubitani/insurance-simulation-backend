@@ -1,12 +1,11 @@
 package jp.co.slcs.insurance_simulation.backend.spring;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -14,15 +13,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import jp.co.slcs.insurance_simulation.backend.spring.config.InsuranceSimurationApiConfig;
 import jp.co.slcs.insurance_simulation.backend.spring.presentation.model.InsurancePremiumCalculateReqDto;
 
 /**
  * SpringMVCのテストクラス
- * 
+ *
  * @author OkamotoYuma
  * @version 1.0.0:2020.12.3
  */
@@ -39,18 +36,15 @@ class InsuranceSimulationBackendApplicationTests {
 
   /**
    * InsuranceProductInfoApiクラスのテスト ステータスがOKかどうかを判断している
-   * 
+   *
    * @author OkamotoYma
    * @version 1.0.0:2020.12.3
    * @throws Exception
    */
-  /*
-   * MyBatisの設定がOracleのままであり、LocalにはOracleがないため必ず例外が発生する。 DBアクセスを修正するまではコメントアウトする。
-   * 
-   * @Test void testInsuranceProductsInfoApi() throws Exception {
-   * this.mockMvc.perform(get("/InsuranceProductsInfo") .param("birthday", "1997-02-16")
-   * .param("sex", "1")) .andDo(print()) .andExpect(status().isOk()); }
-   */
+   @Test
+   void testInsuranceProductsInfoApi() throws Exception {
+     this.mockMvc.perform(get("/InsuranceProductsInfo") .param("birthday", "1997-02-16")
+         .param("sex", "1")) .andDo(print()) .andExpect(status().isOk()); }
 
   @Test
   void testInsurancePremiumCaluculateApi() throws Exception {
