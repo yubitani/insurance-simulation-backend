@@ -9,5 +9,5 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface SimulationOptionDao extends CrudRepository<SimulationOptionDaoEntity, Integer> {
 
-	public List<SimulationOptionDaoEntity> findBySimulationId(int simulationId);
+  public List<SimulationOptionDaoEntity> findBySimulationId(int simulationId);
 }

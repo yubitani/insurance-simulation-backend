@@ -15,6 +15,7 @@ import lombok.ToString;
 
 /**
  * 保険料計算APIのリクエストDTOクラス
+ * 
  * @author Inadome Takayuki
  * @version 1.0.0: 2020.11.18
  */
@@ -23,23 +24,23 @@ import lombok.ToString;
 @ToString
 public class InsurancePremiumCalculateReqDto {
 
-	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-	@NonNull
-	@JsonSerialize(using = LocalDateSerializer.class)
-	private LocalDate birthday;
+  @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+  @NonNull
+  @JsonSerialize(using = LocalDateSerializer.class)
+  private LocalDate birthday;
 
-	@NonNull
-	private String sex;
+  @NonNull
+  private String sex;
 
-	@NonNull
-	private String productCode;
+  @NonNull
+  private String productCode;
 
-	@NonNull
-	private String benefitCode;
+  @NonNull
+  private String benefitCode;
 
-	@NonNull
-	private String periodOfInsuranceCode;
+  @NonNull
+  private String periodOfInsuranceCode;
 
-	private List<String> optionList;
+  private List<String> optionList;
 
 }

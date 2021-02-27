@@ -13,11 +13,11 @@ import jp.co.slcs.insurance_simulation.backend.usecase.GetDocumentRequestsUsecas
  */
 public interface DocumentRequestQueryService {
 
-	/**
-	 * 資料請求一覧を取得するメソッド。
-	 *
-	 * @return 資料請求一覧データ（最新５件分）
-	 */
-	public List<DocumentRequestList> fetchDocumentRequestLists();
+  /**
+   * 資料請求一覧を取得するメソッド。
+   *
+   * @return 資料請求一覧データ（最新５件分）
+   */
+  public List<DocumentRequestList> fetchDocumentRequestLists();
 
 }

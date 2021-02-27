@@ -21,31 +21,31 @@ import lombok.ToString;
  * @author horikawakeisuke 資料請求テーブルのDAOEntity
  */
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
-@RequiredArgsConstructor(onConstructor = @__({ @PersistenceConstructor }))
+@RequiredArgsConstructor(onConstructor = @__({@PersistenceConstructor}))
 @Builder
 @Getter
 @ToString
 @Table("DOCUMENT_REQUEST")
 public class DocumentRequestDaoEntity implements Persistable<String> {
 
-	@Id
-	@NonNull
-	private String receiptNo;
+  @Id
+  @NonNull
+  private String receiptNo;
 
-	@NonNull
-	private LocalDateTime requestedDateTime;
+  @NonNull
+  private LocalDateTime requestedDateTime;
 
-	@NonNull
-	private Integer customerId;
+  @NonNull
+  private Integer customerId;
 
-	@Override
-	public String getId() {
-		// TODO 自動生成されたメソッド・スタブ
-		return receiptNo;
-	}
+  @Override
+  public String getId() {
+    // TODO 自動生成されたメソッド・スタブ
+    return receiptNo;
+  }
 
-	@Builder.Default
-	@Setter
-	@Transient
-	private boolean isNew = false;
+  @Builder.Default
+  @Setter
+  @Transient
+  private boolean isNew = false;
 }

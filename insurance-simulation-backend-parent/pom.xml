@@ -45,13 +45,6 @@
 				<artifactId>spring-data-relational</artifactId>
 				<version>2.1.0-M2</version>
 			</dependency>
-			<dependency>
-				<groupId>com.oracle.database.jdbc</groupId>
-				<artifactId>ojdbc-bom</artifactId>
-				<version>${ojdbc.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
 		</dependencies>
 	</dependencyManagement>
 

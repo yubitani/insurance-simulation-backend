@@ -6,6 +6,7 @@ import lombok.NonNull;
 
 /**
  * エラー内容のレスポンスDTOクラス
+ * 
  * @author Masato Uraji
  * @version 1.0.0: 2020.12.20
  */
@@ -13,7 +14,7 @@ import lombok.NonNull;
 @Getter
 public class ErrorResDto {
 
-	@NonNull
-	private final String errorMessage;
+  @NonNull
+  private final String errorMessage;
 
 }

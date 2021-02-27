@@ -21,43 +21,43 @@ import lombok.NonNull;
 @AllArgsConstructor
 public class GetTotalUsecase {
 
-    /**
-     * QueryServiceクラスを取得
-     */
-	@NonNull
-    private final StatisticQueryService queryService;
+  /**
+   * QueryServiceクラスを取得
+   */
+  @NonNull
+  private final StatisticQueryService queryService;
 
-    /**
-     * invokeメソッド
-     *
-     * 保険商品単位での資料請求件数の累計データを取得する。
-     *
-     * @return TotalData 資料請求件数の累計データ（自クラス内で定義）
-     */
-    public TotalData invoke(){
-    	return TotalData.builder().data(queryService.fetchTotalData()).build();
+  /**
+   * invokeメソッド
+   *
+   * 保険商品単位での資料請求件数の累計データを取得する。
+   *
+   * @return TotalData 資料請求件数の累計データ（自クラス内で定義）
+   */
+  public TotalData invoke() {
+    return TotalData.builder().data(queryService.fetchTotalData()).build();
 
-    }
+  }
 
-    /**
-     * 以下、DTO（usecase → presentation）
-     */
-    @Builder
-    @Getter
-    public static class TotalData{
-    	@Default
-    	@NonNull
-    	private final LocalDateTime acquiredDateTime = LocalDateTime.now();
-    	@NonNull
-    	private final  List<TotalDataRow> data;
-    }
-    @Builder
-    @Getter
-    public static class TotalDataRow{
-    	@NonNull
-    	private final  String productName;
-    	@NonNull
-    	private final  Long number;
-    }
+  /**
+   * 以下、DTO（usecase → presentation）
+   */
+  @Builder
+  @Getter
+  public static class TotalData {
+    @Default
+    @NonNull
+    private final LocalDateTime acquiredDateTime = LocalDateTime.now();
+    @NonNull
+    private final List<TotalDataRow> data;
+  }
+  @Builder
+  @Getter
+  public static class TotalDataRow {
+    @NonNull
+    private final String productName;
+    @NonNull
+    private final Long number;
+  }
 
 }

@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class BenefitChoice {
 
-	String benefitchoicecode;
-	String benefitchoicename;
+  String benefitchoicecode;
+  String benefitchoicename;
 
 }

@@ -5,9 +5,9 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class ProductOption{
+public class ProductOption {
 
-    String productcode;
-    List<OptionChoice> optionlist;
+  String productcode;
+  List<OptionChoice> optionlist;
 
 }

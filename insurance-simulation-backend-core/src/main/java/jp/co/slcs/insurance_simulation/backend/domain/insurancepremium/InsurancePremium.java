@@ -10,14 +10,15 @@ import lombok.NonNull;
 
 /**
  * 保険料計算のインターフェイスクラス
+ * 
  * @author Inadome Takayuki
  * @version 1.0.0: 2020.11.18
  */
 public interface InsurancePremium {
 
-	// 引数は基準日、生年月日、性別、商品構成要素（給付金コード、保険期間コード、オプション）
-	public int insurancePremiumCalculate(
-			@NonNull LocalDate localDate, @NonNull Birthday birthday, @NonNull Sex sex,
-			@NonNull String benefitCode, @NonNull String periodOfInsuranceCode, List<String> optionList);
+  // 引数は基準日、生年月日、性別、商品構成要素（給付金コード、保険期間コード、オプション）
+  public int insurancePremiumCalculate(@NonNull LocalDate localDate, @NonNull Birthday birthday,
+      @NonNull Sex sex, @NonNull String benefitCode, @NonNull String periodOfInsuranceCode,
+      List<String> optionList);
 
 }

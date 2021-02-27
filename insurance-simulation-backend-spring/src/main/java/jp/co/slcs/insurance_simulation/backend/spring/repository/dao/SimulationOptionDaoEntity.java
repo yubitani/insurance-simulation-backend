@@ -19,27 +19,27 @@ import lombok.ToString;
  * @author horikawakeisuke 見積もりオプションテーブルのDAOEntity
  */
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
-@RequiredArgsConstructor(onConstructor = @__({ @PersistenceConstructor }))
+@RequiredArgsConstructor(onConstructor = @__({@PersistenceConstructor}))
 @Builder
 @Getter
 @ToString
 @Table("SIMULATION_OPTION")
 public class SimulationOptionDaoEntity implements Persistable<Integer> {
 
-	@Id
-	private Integer simulationOptionId;
-	@NonNull
-	private String optionCode;
-	@NonNull
-	private Integer simulationId;
+  @Id
+  private Integer simulationOptionId;
+  @NonNull
+  private String optionCode;
+  @NonNull
+  private Integer simulationId;
 
-	@Override
-	public Integer getId() {
-		return simulationOptionId;
-	}
+  @Override
+  public Integer getId() {
+    return simulationOptionId;
+  }
 
-	@Builder.Default
-	@Setter
-	@Transient
-	private boolean isNew = false;
+  @Builder.Default
+  @Setter
+  @Transient
+  private boolean isNew = false;
 }

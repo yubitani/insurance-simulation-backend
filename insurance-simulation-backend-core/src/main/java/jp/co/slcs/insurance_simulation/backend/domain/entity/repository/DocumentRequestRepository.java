@@ -11,8 +11,8 @@ public interface DocumentRequestRepository {
 
   List<DocumentRequest> getAll();
 
-//  void update(DocumentRequest documentRequest);
+  // void update(DocumentRequest documentRequest);
 
-//  void remove(Long receiptNo);
+  // void remove(Long receiptNo);
 
 }

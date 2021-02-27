@@ -6,6 +6,7 @@ import lombok.NonNull;
 
 /**
  * 保険料計算APIのレスポンスDTOクラス
+ * 
  * @author Inadome Takayuki
  * @version 1.0.0: 2020.11.18
  */
@@ -13,7 +14,7 @@ import lombok.NonNull;
 @Getter
 public class InsurancePremiumCalculateResDto {
 
-	@NonNull
-	private final String insurancePremium;
+  @NonNull
+  private final String insurancePremium;
 
 }

@@ -17,15 +17,15 @@ import jp.co.slcs.insurance_simulation.backend.spring.mybatis.entity.ProductPeri
 @Mapper
 public interface InsuranceProductInfoMapper {
 
-	List<InsuranceProductInfo> getInfos();
+  List<InsuranceProductInfo> getInfos();
 
-	//今のところ使ってないけど一応用意
-	List<BenefitBenefitChoice> getBenefitBenefitChoice();
+  // 今のところ使ってないけど一応用意
+  List<BenefitBenefitChoice> getBenefitBenefitChoice();
 
-	//今のところ使ってないけど一応用意
-	List<ProductPeriodOfInsurance> getProductPeriodOfInsurance();
+  // 今のところ使ってないけど一応用意
+  List<ProductPeriodOfInsurance> getProductPeriodOfInsurance();
 
-	//今のところ使ってないけど一応用意
-	List<ProductOption> getProductOption();
+  // 今のところ使ってないけど一応用意
+  List<ProductOption> getProductOption();
 
 }

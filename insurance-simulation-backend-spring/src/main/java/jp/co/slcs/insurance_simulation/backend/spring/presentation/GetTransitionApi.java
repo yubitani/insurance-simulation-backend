@@ -23,22 +23,23 @@ import lombok.NonNull;
 @RestController
 public class GetTransitionApi {
 
-	/**
-	 * 資料請求件数の推移データを取得する業務ロジック
-	 */
-	@NonNull
-	private final GetTransitionUsecase usecase;
+  /**
+   * 資料請求件数の推移データを取得する業務ロジック
+   */
+  @NonNull
+  private final GetTransitionUsecase usecase;
 
-	/**
-	 * 統計単位（日別 or 時間別）を受け取り、業務ロジックで取得した資料請求件数の推移データ（POJO）をJSONでクライアントに返すメソッド。
-	 *
-	 * @param String 統計単位
-	 * @return TotalData 推移データ
-	 */
-	@NonNull
-	@GetMapping(path = "/statistics/transition/{unitType}", produces = MediaType.APPLICATION_JSON_VALUE)
-	@ResponseStatus(HttpStatus.OK)
-	public TransitionData getTransition(@NonNull @PathVariable("unitType") String unitType) {
-		return usecase.invoke(unitType);
-	}
+  /**
+   * 統計単位（日別 or 時間別）を受け取り、業務ロジックで取得した資料請求件数の推移データ（POJO）をJSONでクライアントに返すメソッド。
+   *
+   * @param String 統計単位
+   * @return TotalData 推移データ
+   */
+  @NonNull
+  @GetMapping(path = "/statistics/transition/{unitType}",
+      produces = MediaType.APPLICATION_JSON_VALUE)
+  @ResponseStatus(HttpStatus.OK)
+  public TransitionData getTransition(@NonNull @PathVariable("unitType") String unitType) {
+    return usecase.invoke(unitType);
+  }
 }

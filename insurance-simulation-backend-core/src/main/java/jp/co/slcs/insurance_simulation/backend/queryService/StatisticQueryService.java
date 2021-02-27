@@ -15,25 +15,25 @@ import jp.co.slcs.insurance_simulation.backend.usecase.GetTransitionUsecase.Tran
  */
 public interface StatisticQueryService {
 
-	/**
-	 * 資料請求件数の商品別累計データを取得するメソッド。
-	 *
-	 * @return 資料請求件数の商品別（プロダクトコード別）累計データ
-	 */
-	public List<TotalDataRow> fetchTotalData();
+  /**
+   * 資料請求件数の商品別累計データを取得するメソッド。
+   *
+   * @return 資料請求件数の商品別（プロダクトコード別）累計データ
+   */
+  public List<TotalDataRow> fetchTotalData();
 
-	/**
-	 * 資料請求件数の推移データ（日別）を取得するメソッド。
-	 *
-	 * @return 資料請求件数の日別推移データ
-	 */
-	public List<TransitionDataRow> fetchTransitionDataPerDay();
+  /**
+   * 資料請求件数の推移データ（日別）を取得するメソッド。
+   *
+   * @return 資料請求件数の日別推移データ
+   */
+  public List<TransitionDataRow> fetchTransitionDataPerDay();
 
-	/**
-	 * 資料請求件数の推移データ（1時間単位）を取得するメソッド。
-	 *
-	 * @return 資料請求件数の1時間単位の推移データ
-	 */
-	public List<TransitionDataRow> fetchTransitionDataPerHour();
+  /**
+   * 資料請求件数の推移データ（1時間単位）を取得するメソッド。
+   *
+   * @return 資料請求件数の1時間単位の推移データ
+   */
+  public List<TransitionDataRow> fetchTransitionDataPerHour();
 
 }

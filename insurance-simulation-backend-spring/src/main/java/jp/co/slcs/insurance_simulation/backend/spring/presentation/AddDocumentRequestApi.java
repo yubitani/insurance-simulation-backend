@@ -15,30 +15,31 @@ import lombok.AllArgsConstructor;
 import lombok.NonNull;
 
 /**
- * @author horikawakeisuke
- * 資料請求を受け付けるAPI
+ * @author horikawakeisuke 資料請求を受け付けるAPI
  */
 @AllArgsConstructor
 @RestController
 public class AddDocumentRequestApi {
 
-	@NonNull
-	private final AddDocumentRequestUsecase usecase;
+  @NonNull
+  private final AddDocumentRequestUsecase usecase;
 
-	@NonNull
-	@PostMapping(path = "/document-request", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public AddDocumentRequestResDto getCalcResult(@NonNull @RequestBody AddDocumentRequestReqDto reqDto) {
+  @NonNull
+  @PostMapping(path = "/document-request", consumes = MediaType.APPLICATION_JSON_VALUE)
+  public AddDocumentRequestResDto getCalcResult(
+      @NonNull @RequestBody AddDocumentRequestReqDto reqDto) {
 
-		List<Simulation> simulationList = reqDto.getSimulationList();
+    List<Simulation> simulationList = reqDto.getSimulationList();
 
-		String usecaseResult = usecase.invoke(reqDto.getName(), reqDto.getNameKana(), reqDto.getBirthday(),
-				reqDto.getSex(), reqDto.getZipCode(), reqDto.getAddress(), reqDto.getTelNo(), reqDto.getMailAddress(),
-				simulationList, reqDto.getSumInsurancePremium());
+    String usecaseResult =
+        usecase.invoke(reqDto.getName(), reqDto.getNameKana(), reqDto.getBirthday(),
+            reqDto.getSex(), reqDto.getZipCode(), reqDto.getAddress(), reqDto.getTelNo(),
+            reqDto.getMailAddress(), simulationList, reqDto.getSumInsurancePremium());
 
-		AddDocumentRequestResDto result = AddDocumentRequestResDto.builder().receiptNo(usecaseResult)
-				.build();
+    AddDocumentRequestResDto result =
+        AddDocumentRequestResDto.builder().receiptNo(usecaseResult).build();
 
-		return result;
-	};
+    return result;
+  };
 
 }

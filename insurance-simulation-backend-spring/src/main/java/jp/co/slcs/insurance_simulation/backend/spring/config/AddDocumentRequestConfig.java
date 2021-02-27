@@ -9,8 +9,9 @@ import jp.co.slcs.insurance_simulation.backend.usecase.AddDocumentRequestUsecase
 @Configuration
 public class AddDocumentRequestConfig {
 
-	@Bean
-	public AddDocumentRequestUsecase addDocumentRequestUsecase(DocumentRequestRepository documentRequestRepository) {
-		return new AddDocumentRequestUsecase(documentRequestRepository);
-	}
+  @Bean
+  public AddDocumentRequestUsecase addDocumentRequestUsecase(
+      DocumentRequestRepository documentRequestRepository) {
+    return new AddDocumentRequestUsecase(documentRequestRepository);
+  }
 }

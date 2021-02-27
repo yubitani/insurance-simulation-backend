@@ -18,42 +18,43 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * @author horikawakeisuke
- * お客様テーブルのDAOEntity
+ * @author horikawakeisuke お客様テーブルのDAOEntity
  */
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
-@RequiredArgsConstructor(onConstructor = @__({ @PersistenceConstructor }))
+@RequiredArgsConstructor(onConstructor = @__({@PersistenceConstructor}))
 @Builder
 @Getter
 @ToString
 @Table("CUSTOMER")
-public class CustomerDaoEntity implements Persistable<Integer>{
+public class CustomerDaoEntity implements Persistable<Integer> {
 
-	@Id
-	private Integer customerId;
-	@NonNull
-	private String name;
-	@NonNull
-	private String kana;
-	@NonNull
-	private LocalDate birthday;
-	@NonNull
-	private String sex; // 1:男 2:女
-	@NonNull
-	private String zipcode;
-	@NonNull
-	private String address;
-	@NonNull
-	private String telNo;
-	@NonNull
-	private String mail;
-	@Override
-	public Integer getId() {
-		return customerId;
-	}
-	@Builder.Default
-    @Setter
-    @Transient
-    private boolean isNew = false;
+  @Id
+  private Integer customerId;
+  @NonNull
+  private String name;
+  @NonNull
+  private String kana;
+  @NonNull
+  private LocalDate birthday;
+  @NonNull
+  private String sex; // 1:男 2:女
+  @NonNull
+  private String zipcode;
+  @NonNull
+  private String address;
+  @NonNull
+  private String telNo;
+  @NonNull
+  private String mail;
+
+  @Override
+  public Integer getId() {
+    return customerId;
+  }
+
+  @Builder.Default
+  @Setter
+  @Transient
+  private boolean isNew = false;
 
 }

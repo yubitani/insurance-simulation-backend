@@ -8,7 +8,7 @@ import lombok.NonNull;
 @Getter
 public class AddDocumentRequestResDto {
 
-    @NonNull
-    private final String receiptNo;
+  @NonNull
+  private final String receiptNo;
 
 }

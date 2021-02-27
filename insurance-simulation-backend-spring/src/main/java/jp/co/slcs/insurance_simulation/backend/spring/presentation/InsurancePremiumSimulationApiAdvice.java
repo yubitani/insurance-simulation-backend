@@ -11,20 +11,19 @@ import jp.co.slcs.insurance_simulation.backend.usecase.exception.InvalidInputFor
 
 /**
  * APIアドバイスクラス
+ * 
  * @author Inadome Takayuki
  * @version 1.0.1: 2020.12.20
  */
 @RestControllerAdvice
 public class InsurancePremiumSimulationApiAdvice {
 
-    @ExceptionHandler(InvalidInputFormatException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ErrorResDto handleException(InvalidInputFormatException e) {
-    	//エラーに応じたメッセージを返す
-    	ErrorResDto result = ErrorResDto.builder()
-				.errorMessage(e.getMessage())
-				.build();
+  @ExceptionHandler(InvalidInputFormatException.class)
+  @ResponseStatus(HttpStatus.BAD_REQUEST)
+  public ErrorResDto handleException(InvalidInputFormatException e) {
+    // エラーに応じたメッセージを返す
+    ErrorResDto result = ErrorResDto.builder().errorMessage(e.getMessage()).build();
 
-		return result;
-    }
+    return result;
+  }
 }

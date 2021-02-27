@@ -9,10 +9,10 @@ import lombok.NonNull;
 /**
  * @author horikawakeisuke 見積もりテーブルのDAO
  */
-public interface SimulationDao extends CrudRepository<SimulationDaoEntity, Integer>{
+public interface SimulationDao extends CrudRepository<SimulationDaoEntity, Integer> {
 
-	long countByProductCode(String productCode);
+  long countByProductCode(String productCode);
 
-	public List<SimulationDaoEntity> findByReceiptNo(@NonNull String receiptNo);
+  public List<SimulationDaoEntity> findByReceiptNo(@NonNull String receiptNo);
 
 }

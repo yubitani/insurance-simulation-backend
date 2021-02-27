@@ -10,13 +10,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class InsuranceSimulationBackendApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(InsuranceSimulationBackendApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(InsuranceSimulationBackendApplication.class, args);
+  }
 
-	@PostConstruct
-	public void init() {
-		TimeZone.setDefault(TimeZone.getTimeZone("Asia/Tokyo"));
-	}
+  @PostConstruct
+  public void init() {
+    TimeZone.setDefault(TimeZone.getTimeZone("Asia/Tokyo"));
+  }
 
 }

@@ -15,26 +15,26 @@ import lombok.ToString;
 @Setter
 @ToString
 public class AddDocumentRequestReqDto {
-	@NonNull
-	private String name;
-	@NonNull
-	private String nameKana;
-	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-	@NonNull
-	private LocalDate birthday;
-	@NonNull
-	private String sex;
-	@NonNull
-	private String zipCode;
-	@NonNull
-	private String address;
-	@NonNull
-	private String telNo;
-	@NonNull
-	private String mailAddress;
-	@NonNull
-	private List<Simulation> simulationList;
-	@NonNull
-	private String sumInsurancePremium;
+  @NonNull
+  private String name;
+  @NonNull
+  private String nameKana;
+  @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+  @NonNull
+  private LocalDate birthday;
+  @NonNull
+  private String sex;
+  @NonNull
+  private String zipCode;
+  @NonNull
+  private String address;
+  @NonNull
+  private String telNo;
+  @NonNull
+  private String mailAddress;
+  @NonNull
+  private List<Simulation> simulationList;
+  @NonNull
+  private String sumInsurancePremium;
 
 }

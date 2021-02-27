@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class ProductPeriodOfInsurance {
 
-	String productcode;
-	List<PeriodOfInsuranceChoice> periodOfInsuranceList;
+  String productcode;
+  List<PeriodOfInsuranceChoice> periodOfInsuranceList;
 
 }
