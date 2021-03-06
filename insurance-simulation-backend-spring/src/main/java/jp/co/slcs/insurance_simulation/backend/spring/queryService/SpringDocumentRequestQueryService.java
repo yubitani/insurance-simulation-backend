@@ -2,9 +2,7 @@ package jp.co.slcs.insurance_simulation.backend.spring.queryService;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.stereotype.Service;
-
 import jp.co.slcs.insurance_simulation.backend.domain.entity.InsuranceInfo;
 import jp.co.slcs.insurance_simulation.backend.domain.entity.InsuranceInfo.Benefit;
 import jp.co.slcs.insurance_simulation.backend.domain.entity.InsuranceInfo.BenefitChoices;
@@ -27,9 +25,6 @@ import lombok.NonNull;
 
 /**
  * 資料請求一覧を取得する際に使用するQueryService。（SpringDataJDBCでの実装）
- *
- * @author Inadome Takayuki
- * @version 1.0.0 2021.1.6
  */
 @AllArgsConstructor
 @Service

@@ -2,7 +2,6 @@ package jp.co.slcs.insurance_simulation.backend.spring.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import jp.co.slcs.insurance_simulation.backend.queryService.DocumentRequestQueryService;
 import jp.co.slcs.insurance_simulation.backend.queryService.StatisticQueryService;
 import jp.co.slcs.insurance_simulation.backend.spring.mybatis.InsuranceProductInfoMapper;
@@ -15,12 +14,7 @@ import jp.co.slcs.insurance_simulation.backend.usecase.InsurancePremiumCalculate
 /**
  * SpringCoreにUsecaseインスタンスを登録するConfigクラス
  * insuranceSimulationConfigクラスとInsuranceProductsInfoConfigクラスを統合しました。
- * 
- * @author OkamotoYuma
- * @version 1.0.0:2020.12.2
  *
- *          GetDocumentRequestsUsecaseクラスに引数を追加しました。
- * @author Inadome Takayuki
  * @version 1.1.0:2021.1.6
  *
  */

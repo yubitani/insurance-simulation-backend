@@ -5,9 +5,7 @@ import lombok.Getter;
 
 /**
  * 年齢の値オブジェクト
- * 
- * @author Inadome Takayuki
- * @version 1.0.1: 2020.12.20
+ *
  */
 @Getter
 @EqualsAndHashCode

@@ -2,12 +2,9 @@ package jp.co.slcs.insurance_simulation.backend.spring.presentation.model;
 
 import java.time.LocalDate;
 import java.util.List;
-
 import org.springframework.format.annotation.DateTimeFormat;
-
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
-
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
@@ -15,9 +12,6 @@ import lombok.ToString;
 
 /**
  * 保険料計算APIのリクエストDTOクラス
- * 
- * @author Inadome Takayuki
- * @version 1.0.0: 2020.11.18
  */
 @Getter
 @Setter

@@ -5,9 +5,6 @@ import lombok.NonNull;
 
 /**
  * 性別の値オブジェクト
- * 
- * @author Inadome Takayuki
- * @version 1.0.1: 2020.12.20
  */
 @EqualsAndHashCode
 public class Sex {

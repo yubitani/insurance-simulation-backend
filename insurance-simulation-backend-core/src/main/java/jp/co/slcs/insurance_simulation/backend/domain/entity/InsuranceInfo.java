@@ -1,7 +1,6 @@
 package jp.co.slcs.insurance_simulation.backend.domain.entity;
 
 import java.util.List;
-
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NonNull;
@@ -10,8 +9,6 @@ import lombok.Setter;
 /**
  * 保険情報をDBからとってきて格納するオブジェクト
  *
- * @author Okamoto Yuma
- * @version 1.0.0:2020.11.19
  */
 
 @Builder
@@ -49,8 +46,6 @@ public class InsuranceInfo {
   /**
    * 保険期間の選択肢クラス Codeは稲留さんWiki参照
    *
-   * @author Okamoto Yuma
-   * @version 1.0.0:2020.11.19
    */
   @Builder
   @Getter
@@ -67,9 +62,6 @@ public class InsuranceInfo {
    * 保険金の選択肢クラス 保険金の選択肢に対するコードと表示名を保持。
    *
    * 例） 500万から3000万で500円単位で選択できる場合。 500万,1000万,1500万・・・,3000万が選択肢として与えられる。
-   *
-   * @author Okamoto Yuma
-   * @version 1.0.0:2020.11.19
    */
   @Builder
   @Getter
@@ -86,9 +78,6 @@ public class InsuranceInfo {
    * 特約クラス 特約コードと特約名を保持。
    *
    * DBから特約の情報を取得し、格納するクラス
-   *
-   * @author Okamoto Yuma
-   * @version 1.0.0:2020.11.19
    */
   @Builder
   @Getter

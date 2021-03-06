@@ -2,7 +2,6 @@ package jp.co.slcs.insurance_simulation.backend.domain.vo;
 
 import java.time.LocalDate;
 import java.time.Period;
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NonNull;
@@ -10,9 +9,7 @@ import lombok.ToString;
 
 /**
  * 生年月日の値オブジェクト
- * 
- * @author Inadome Takayuki
- * @version 1.0.1: 2020.12.20
+ *
  */
 @Getter
 @EqualsAndHashCode

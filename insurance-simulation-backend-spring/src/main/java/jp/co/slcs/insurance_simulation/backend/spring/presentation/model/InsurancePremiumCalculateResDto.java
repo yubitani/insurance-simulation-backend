@@ -6,9 +6,6 @@ import lombok.NonNull;
 
 /**
  * 保険料計算APIのレスポンスDTOクラス
- * 
- * @author Inadome Takayuki
- * @version 1.0.0: 2020.11.18
  */
 @Builder
 @Getter

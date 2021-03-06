@@ -2,7 +2,6 @@ package jp.co.slcs.insurance_simulation.backend.domain.insurancepremium;
 
 import java.time.LocalDate;
 import java.util.List;
-
 import jp.co.slcs.insurance_simulation.backend.domain.vo.Birthday;
 import jp.co.slcs.insurance_simulation.backend.domain.vo.Sex;
 import lombok.NonNull;
@@ -10,9 +9,6 @@ import lombok.NonNull;
 
 /**
  * 保険料計算のインターフェイスクラス
- * 
- * @author Inadome Takayuki
- * @version 1.0.0: 2020.11.18
  */
 public interface InsurancePremium {
 

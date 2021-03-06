@@ -6,9 +6,6 @@ import jp.co.slcs.insurance_simulation.backend.domain.insurancepremium.impl.Medi
 
 /**
  * 保険料計算のファクトリークラス
- * 
- * @author Inadome Takayuki
- * @version 1.0.0: 2020.11.18
  */
 public enum InsurancePremiumFactory {
 

@@ -21,9 +21,6 @@ import lombok.NonNull;
 
 /**
  * 資料請求件数についての統計情報（累計データ、推移データ）を取得する際に使用するQueryService。（SpringDataJDBCでの実装）
- *
- * @author KentoOtani
- * @version 1.0.0 2021.01.04
  */
 @AllArgsConstructor
 @Service

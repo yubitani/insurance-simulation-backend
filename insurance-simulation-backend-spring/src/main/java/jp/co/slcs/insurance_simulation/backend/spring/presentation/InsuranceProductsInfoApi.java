@@ -2,13 +2,11 @@ package jp.co.slcs.insurance_simulation.backend.spring.presentation;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
 import jp.co.slcs.insurance_simulation.backend.spring.mybatis.InsuranceProductInfoMapper;
 import jp.co.slcs.insurance_simulation.backend.spring.presentation.model.InsuranceProductInfoResDto;
 import jp.co.slcs.insurance_simulation.backend.spring.presentation.model.InsuranceProductInfoResDto.Benefit;
@@ -18,12 +16,6 @@ import jp.co.slcs.insurance_simulation.backend.spring.presentation.model.Insuran
 import jp.co.slcs.insurance_simulation.backend.spring.usecase.InsuranceProductsInfoUsecase;
 import lombok.AllArgsConstructor;
 import lombok.NonNull;
-
-/**
- *
- * @author Okamoto Yuma
- * @version 1.0.0:2020.11.18
- */
 
 @AllArgsConstructor
 @RestController
@@ -40,7 +32,7 @@ public class InsuranceProductsInfoApi {
 
   /**
    * 業務ロジックで取得した保険商品情報を加工し、Modelに移し変える
-   * 
+   *
    * @return
    */
   @NonNull

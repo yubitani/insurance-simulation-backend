@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
 import jp.co.slcs.insurance_simulation.backend.usecase.GetTransitionUsecase;
 import jp.co.slcs.insurance_simulation.backend.usecase.GetTransitionUsecase.TransitionData;
 import lombok.AllArgsConstructor;
@@ -14,10 +13,6 @@ import lombok.NonNull;
 
 /**
  * 資料請求件数の推移データを取得するAPI
- *
- * @author KentoOtani
- * @version 1.0.0 2020.12.16
- * @version 1.1.0 2020.1.4 DB格納値を返却できるよう修正。
  */
 @AllArgsConstructor
 @RestController

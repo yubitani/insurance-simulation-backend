@@ -5,9 +5,6 @@ import lombok.NoArgsConstructor;
 
 /**
  * システム例外クラス
- * 
- * @author Inadome Takayuki
- * @version 1.0.0: 2020.11.18
  */
 @NoArgsConstructor
 public class SystemException extends RuntimeException {

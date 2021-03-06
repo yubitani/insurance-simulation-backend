@@ -1,7 +1,6 @@
 package jp.co.slcs.insurance_simulation.backend.domain.entity;
 
 import java.util.List;
-
 import jp.co.slcs.insurance_simulation.backend.domain.vo.Birthday;
 import jp.co.slcs.insurance_simulation.backend.domain.vo.Sex;
 import lombok.Builder;
@@ -9,7 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * @author 堀川 資料請求クラス 顧客から請求された資料において必要な情報を定義しているクラス
+ * 資料請求クラス 顧客から請求された資料において必要な情報を定義しているクラス
  */
 @Builder
 @Getter
@@ -40,7 +39,7 @@ public class DocumentRequest {
   private int sumInsurancePremium;
 
   /**
-   * @author 堀川 顧客が資料請求した保険商品の情報を定義するクラス
+   * 顧客が資料請求した保険商品の情報を定義するクラス
    */
   @Builder
   @Getter

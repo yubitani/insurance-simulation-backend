@@ -2,7 +2,6 @@ package jp.co.slcs.insurance_simulation.backend.usecase;
 
 import java.time.LocalDate;
 import java.util.List;
-
 import jp.co.slcs.insurance_simulation.backend.queryService.DocumentRequestQueryService;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,9 +10,7 @@ import lombok.NonNull;
 
 /**
  * 資料請求内容を一覧表示用に取得するAPIのユースケース
- * 
- * @author Inadome Takayuki
- * @version 1.0.0: 2021.1.5
+ *
  */
 @AllArgsConstructor
 public class GetDocumentRequestsUsecase {

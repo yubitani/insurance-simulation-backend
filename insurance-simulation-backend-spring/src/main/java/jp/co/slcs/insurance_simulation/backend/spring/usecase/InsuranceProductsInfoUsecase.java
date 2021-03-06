@@ -3,7 +3,6 @@ package jp.co.slcs.insurance_simulation.backend.spring.usecase;
 // java import
 import java.util.ArrayList;
 import java.util.List;
-
 import jp.co.slcs.insurance_simulation.backend.domain.entity.InsuranceInfo;
 import jp.co.slcs.insurance_simulation.backend.domain.entity.InsuranceInfo.Benefit;
 import jp.co.slcs.insurance_simulation.backend.domain.entity.InsuranceInfo.BenefitChoices;
@@ -19,9 +18,6 @@ import lombok.NonNull;
 
 /**
  * 生年月日をもとに、見積可能な保険商品の情報を取得するAPIのユースケース
- *
- * @author Okamoto Yuma
- * @version 2.0.0: 2021.01.7
  */
 @AllArgsConstructor
 public class InsuranceProductsInfoUsecase {
@@ -101,21 +97,21 @@ public class InsuranceProductsInfoUsecase {
 
     /*
      * for(BenefitBenefitChoice benefitBenefitChoice : benefitBenefitChoices){
-     * 
+     *
      * @NonNull List<BenefitChoices> benefitConditionList = new ArrayList<>();;
-     * 
+     *
      * @NonNull List<PeriodOfInsurance> periodOfInsuranceList = new ArrayList<>();;
-     * 
+     *
      * @NonNull List<Option> optionList = new ArrayList<>();
-     * 
+     *
      * //BenefitBenefitChoiceからbenefitConditionListを取得 benefitConditionList.clear();
      * for(BenefitChoice benefitChoice : benefitBenefitChoice.getBenefit()){ BenefitChoices
      * benefitChoices = BenefitChoices.builder() .benefitCode(benefitChoice.getBenefitchoicecode())
      * .benefitChoicesName(benefitChoice.getBenefitchoicename()) .build();
      * benefitConditionList.add(benefitChoices); }
-     * 
+     *
      * //保険商品コードを取得 String productCode = benefitBenefitChoice.getProductcode();
-     * 
+     *
      * //ProductPeriodOfInsuanceからBenefitBenefitChoiceのproductcodeと同じcodeであるインスタンスを見つけ、
      * そこからperiodOfInsuranceListを取得する periodOfInsuranceList.clear(); for(ProductPeriodOfInsurance
      * productPeriodOfInsurance : productPeriodOfInsurances){
@@ -125,14 +121,14 @@ public class InsuranceProductsInfoUsecase {
      * .periodOfInsuranceCode(choice.getProductinsurancecode())
      * .periodOfInsuranceName(choice.getProductinsurancename()) .build();
      * periodOfInsuranceList.add(periodOfInsurance); } }
-     * 
+     *
      * //ProductOptionからBenefitBenefitChoiceのproductcodeと同じcodeであるインスタンスを見つけ、そこからoptionListを取得する
      * optionList.clear(); for(ProductOption productOption : productOptions){
      * if(!productOption.getProductcode().equals(productCode)) continue; else for(OptionChoice
      * choice : productOption.getOptionlist()){ Option option = Option.builder()
      * .optionCode(choice.getOptioncode()) .name(choice.getOptionname()) .build();
      * optionList.add(option); } }
-     * 
+     *
      * InsuranceInfo info = InsuranceInfo.builder()
      * .productCode(benefitBenefitChoice.getProductcode())
      * .productName(benefitBenefitChoice.getProductname()) .benefit(Benefit.builder()

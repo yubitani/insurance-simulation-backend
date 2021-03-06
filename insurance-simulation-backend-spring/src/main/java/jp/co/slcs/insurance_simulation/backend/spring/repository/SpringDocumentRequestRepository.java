@@ -2,9 +2,7 @@ package jp.co.slcs.insurance_simulation.backend.spring.repository;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
 import org.springframework.stereotype.Repository;
-
 import jp.co.slcs.insurance_simulation.backend.domain.entity.DocumentRequest;
 import jp.co.slcs.insurance_simulation.backend.domain.entity.DocumentRequest.DocumentRequestProduct;
 import jp.co.slcs.insurance_simulation.backend.domain.entity.repository.DocumentRequestRepository;
@@ -20,7 +18,7 @@ import lombok.AllArgsConstructor;
 import lombok.NonNull;
 
 /**
- * @author horikawakeisuke 資料請求を受け付ける際に使用するRepository
+ * 資料請求を受け付ける際に使用するRepository
  */
 @AllArgsConstructor
 @Repository

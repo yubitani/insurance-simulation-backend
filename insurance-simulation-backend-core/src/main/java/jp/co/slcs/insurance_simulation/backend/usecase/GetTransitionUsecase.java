@@ -2,7 +2,6 @@ package jp.co.slcs.insurance_simulation.backend.usecase;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
 import jp.co.slcs.insurance_simulation.backend.queryService.StatisticQueryService;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,11 +11,6 @@ import lombok.NonNull;
 
 /**
  * 資料請求件数の推移データを取得するAPIのユースケース
- *
- * @author KentoOtani
- *
- * @version 1.0.0: 2020.12.15
- * @version 1.1.0: 2020.1.4 queryServiceを呼び出すよう修正。
  */
 @AllArgsConstructor
 public class GetTransitionUsecase {

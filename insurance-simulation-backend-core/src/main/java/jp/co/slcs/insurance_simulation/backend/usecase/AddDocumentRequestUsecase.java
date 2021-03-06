@@ -3,7 +3,6 @@ package jp.co.slcs.insurance_simulation.backend.usecase;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
 import jp.co.slcs.insurance_simulation.backend.domain.entity.DocumentRequest;
 import jp.co.slcs.insurance_simulation.backend.domain.entity.DocumentRequest.DocumentRequestProduct;
 import jp.co.slcs.insurance_simulation.backend.domain.entity.repository.DocumentRequestRepository;
@@ -18,7 +17,7 @@ import lombok.Setter;
 
 
 /**
- * @author horikawakeisuke 資料請求を受け付けるAPIのユースケース ※DB接続周りについて、一旦コメントアウト中
+ * 資料請求を受け付けるAPIのユースケース ※DB接続周りについて、一旦コメントアウト中
  */
 @AllArgsConstructor
 public class AddDocumentRequestUsecase {

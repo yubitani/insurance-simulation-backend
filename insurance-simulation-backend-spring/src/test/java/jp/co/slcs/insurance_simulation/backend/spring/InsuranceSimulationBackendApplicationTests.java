@@ -19,9 +19,6 @@ import jp.co.slcs.insurance_simulation.backend.spring.presentation.model.Insuran
 
 /**
  * SpringMVCのテストクラス
- *
- * @author OkamotoYuma
- * @version 1.0.0:2020.12.3
  */
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -37,13 +34,12 @@ class InsuranceSimulationBackendApplicationTests {
   /**
    * InsuranceProductInfoApiクラスのテスト ステータスがOKかどうかを判断している
    *
-   * @author OkamotoYma
-   * @version 1.0.0:2020.12.3
    * @throws Exception
    */
-    @Test
-    void testInsuranceProductsInfoApi() throws Exception {
-      this.mockMvc.perform(get("/InsuranceProductsInfo")) .andDo(print()) .andExpect(status().isOk()); }
+  @Test
+  void testInsuranceProductsInfoApi() throws Exception {
+    this.mockMvc.perform(get("/InsuranceProductsInfo")).andDo(print()).andExpect(status().isOk());
+  }
 
   @Test
   void testInsurancePremiumCaluculateApi() throws Exception {

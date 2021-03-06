@@ -6,9 +6,6 @@ import lombok.NonNull;
 
 /**
  * エラー内容のレスポンスDTOクラス
- * 
- * @author Masato Uraji
- * @version 1.0.0: 2020.12.20
  */
 @Builder
 @Getter

@@ -4,9 +4,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * 入力チェック例外クラス
- * 
- * @author Inadome Takayuki
- * @version 1.0.0: 2020.11.18
+ *
  */
 @NoArgsConstructor
 public class InvalidInputFormatException extends RuntimeException {

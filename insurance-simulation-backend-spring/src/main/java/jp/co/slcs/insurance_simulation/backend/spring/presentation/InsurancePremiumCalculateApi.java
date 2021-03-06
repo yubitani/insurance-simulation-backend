@@ -4,7 +4,6 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import jp.co.slcs.insurance_simulation.backend.spring.presentation.model.InsurancePremiumCalculateReqDto;
 import jp.co.slcs.insurance_simulation.backend.spring.presentation.model.InsurancePremiumCalculateResDto;
 import jp.co.slcs.insurance_simulation.backend.usecase.InsurancePremiumCalculateUsecase;
@@ -14,9 +13,6 @@ import lombok.NonNull;
 
 /**
  * 保険料計算APIクラス
- * 
- * @author Inadome Takayuki
- * @version 1.0.0: 2020.11.18
  */
 @AllArgsConstructor
 @RestController

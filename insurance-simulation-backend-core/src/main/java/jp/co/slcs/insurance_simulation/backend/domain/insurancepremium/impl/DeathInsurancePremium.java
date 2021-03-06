@@ -2,7 +2,6 @@ package jp.co.slcs.insurance_simulation.backend.domain.insurancepremium.impl;
 
 import java.time.LocalDate;
 import java.util.List;
-
 import jp.co.slcs.insurance_simulation.backend.domain.insurancepremium.InsurancePremium;
 import jp.co.slcs.insurance_simulation.backend.domain.vo.Age;
 import jp.co.slcs.insurance_simulation.backend.domain.vo.Birthday;
@@ -11,9 +10,6 @@ import lombok.NonNull;
 
 /**
  * 死亡保険 保険料計算の実装クラス
- * 
- * @author Inadome Takayuki
- * @version 1.0.0: 2020.11.18
  */
 public class DeathInsurancePremium implements InsurancePremium {
 

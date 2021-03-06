@@ -4,16 +4,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
 import jp.co.slcs.insurance_simulation.backend.spring.presentation.model.ErrorResDto;
 import jp.co.slcs.insurance_simulation.backend.usecase.exception.InvalidInputFormatException;
 
 
 /**
  * APIアドバイスクラス
- * 
- * @author Inadome Takayuki
- * @version 1.0.1: 2020.12.20
  */
 @RestControllerAdvice
 public class InsurancePremiumSimulationApiAdvice {

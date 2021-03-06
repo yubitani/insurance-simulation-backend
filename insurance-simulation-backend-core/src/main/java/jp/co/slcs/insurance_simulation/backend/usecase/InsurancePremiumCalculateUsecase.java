@@ -2,7 +2,6 @@ package jp.co.slcs.insurance_simulation.backend.usecase;
 
 import java.time.LocalDate;
 import java.util.List;
-
 import jp.co.slcs.insurance_simulation.backend.domain.insurancepremium.InsurancePremium;
 import jp.co.slcs.insurance_simulation.backend.domain.insurancepremium.InsurancePremiumFactory;
 import jp.co.slcs.insurance_simulation.backend.domain.vo.Birthday;
@@ -13,9 +12,6 @@ import lombok.NonNull;
 
 /**
  * 保険料計算のユースケースクラス
- * 
- * @author Inadome Takayuki
- * @version 1.0.1: 2020.12.20
  */
 public class InsurancePremiumCalculateUsecase {
 

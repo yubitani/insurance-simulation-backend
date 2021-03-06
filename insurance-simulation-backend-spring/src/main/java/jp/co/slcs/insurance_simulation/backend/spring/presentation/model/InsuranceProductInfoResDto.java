@@ -1,16 +1,12 @@
 package jp.co.slcs.insurance_simulation.backend.spring.presentation.model;
 
 import java.util.List;
-
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NonNull;
 
 /**
  * 保険商品情報取得APIにて、JSONに変換してユーザに返すModelクラス。
- *
- * @author Okamoto Yuma
- * @version 1.0.0:2020.11.18
  */
 
 @Builder

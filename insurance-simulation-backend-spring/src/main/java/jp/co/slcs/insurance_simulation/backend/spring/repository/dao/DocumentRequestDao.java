@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import jp.co.slcs.insurance_simulation.backend.usecase.GetTransitionUsecase.TransitionDataRow;
 
 /**
- * @author horikawakeisuke 資料請求テーブルのDAO
+ * 資料請求テーブルのDAO
  */
 public interface DocumentRequestDao extends CrudRepository<DocumentRequestDaoEntity, String> {
 
